@@ -1,5 +1,6 @@
 # parent-tobias
 ## High-tech, low-tech, no-tech
+{: .shadow }
  
 
 <article style=" display: grid; grid-template-columns: 1fr 3fr 1fr;">
