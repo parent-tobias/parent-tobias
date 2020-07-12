@@ -2,18 +2,11 @@
 ## High-tech, low-tech, no-tech
  
 
-<style>
-body { display: flex;flex-direction: column;}
-article { display: grid; grid-template-columns: 1fr 3fr 1fr; }
-#stuff-ive-done { display: grid; grid-template-columns: repeat(3, 1fr); }
-#stuff-ive-done .card { border: 1px; padding: 2em; }
-ul { list-style-type: "- "; padding: 0 1.5em; }
-</style>
-<article>
+<article style=" display: grid; grid-template-columns: 1fr 3fr 1fr;">
 <section id="about-me">
 <h2>Who I am</h2>
 <p>I'm primarily a front-end developer, but I follow my curiousity. My development interests currently include:</p>
-<ul>
+<ul style=" list-style-type: '- '; padding: 0 1.5em;">
 <li>Javascript, HTML, CSS, Web Components</li>
 <li>Node, PHP, perl, etc.</li>
 <li>Serverless development (for example, Firebase)</li>
@@ -22,14 +15,15 @@ ul { list-style-type: "- "; padding: 0 1.5em; }
 <li>Frameless (pure javascript!)</li>
 </ul>
 </section>
-<section id="stuff-ive-done">
+<section id="stuff-ive-done" style="display: grid; grid-template-columns: repeat(3, 1fr);">
 <h2>What I do?</h2>
 <p>I am constantly tinkering, and there are always projects in the works. Here are a few I've really enjoyed:</p>
-<div class="card">
+<div class="card" style="border: 1px; padding: 2em; }
+ul { list-style-type: "- "; padding: 0 1.5em;">
 <h3>ES6 Timer Class</h3>
 <p>When I was first learning about the class syntax in ES6, I wanted to see if I could create some abstract components with it. The intent was, at the time, to build the components needed for a Pomodoro Timer type project, similar to the projects from FreeCodeCamp and others, but using pure JS rather than frameworks.</p>
 </div>
-<div class="card">
+<div class="card" style="border: 1px; padding: 2em; ">
 <h3>ES6 Increment/Decrement Class</h3>
 <p>When I was first learning about the class syntax in ES6, I wanted to see if I could create some abstract components with it. The intent was, at the time, to build the components needed for a Pomodoro Timer type project, similar to the projects from FreeCodeCamp and others, but using pure JS rather than frameworks.</p>
 </div>
