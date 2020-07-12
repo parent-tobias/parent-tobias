@@ -1,32 +1,5 @@
 # parent-tobias
- 
 
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-      article {
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-      }
-
-      #stuff-ive-done {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      #stuff-ive-done .card {
-        border: 1px;
-        padding: 2em;
-      }
-
-      ul {
-        list-style-type: "- ";
-        padding: 0 1.5em;
-      }
-
-    </style>
 
     <header>
       <h1>Tobias Parent</h1>
