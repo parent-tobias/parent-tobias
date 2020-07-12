@@ -1,10 +1,6 @@
 # parent-tobias
+## High-tech, low-tech, no-tech
 
-
-    <header>
-      <h1>Tobias Parent</h1>
-      <h2>High-tech, low-tech, no-tech</h2>
-    </header>
     <article>
       <section id="about-me">
         <h2>Who I am</h2>
