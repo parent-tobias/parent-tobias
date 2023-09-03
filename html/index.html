@@ -6,15 +6,33 @@
   <title>Document</title>
 </head>
 <body>
-  <main>Registration Status: <strong id='status'></strong></main>
+  <main>Registration Status: <strong id='status'></strong>
+  <ul id="state"></ul>
+  </main>
 
   <script>
+
+    const printState = (state) =>{
+      const stateEl = document.createElement('li');
+      stateEl.classList.add(`currentStatus ${state}`);
+      document.querySelector('#state').append(stateEl)
+    }
+
     if('serviceWorker' in navigator){
+      const statuses = ['installing', 'waiting','active'];
+      let worker;
       navigator.serviceWorker.register(
         'service-worker.js',
         {scope: './'}
-      ).then(function(serviceWorker){
+      ).then((registration)=>{
         document.querySelector("#status").textContent = 'success!'
+        const currentStatus = statuses.find(status=>registration[status]);
+        serviceWorker = currentStatus ? registration[currentStatus] : serviceWorker;
+        if(serviceWorker){
+          serviceWorker.addEventListener('statechange', (e)=> printState(e.target.state))
+        }
+        printState(currentStatus);
+
       }).catch(error=>document.querySelector("#status").textContent=error)
     } else {
       document.querySelector("#status").textContent = 'unavailable.';
