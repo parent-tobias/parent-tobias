@@ -19,19 +19,32 @@
     }
 
     if('serviceWorker' in navigator){
-      const statuses = ['installing', 'waiting','active'];
-      let worker;
       navigator.serviceWorker.register(
         'service-worker.js',
         {scope: './'}
       ).then((registration)=>{
-        document.querySelector("#status").textContent = 'success!'
-        const currentStatus = statuses.find(status=>registration[status]);
-        serviceWorker = currentStatus ? registration[currentStatus] : serviceWorker;
-        if(serviceWorker){
-          serviceWorker.addEventListener('statechange', (e)=> printState(e.target.state))
+        var serviceWorker;
+
+        document.getElementById('status').innerHTML = 'successful';
+
+        if (registration.installing) {
+          serviceWorker = registration.installing;
+          printState('installing');
+        } else if (registration.waiting) {
+          serviceWorker = registration.waiting;
+          printState('waiting');
+        } else if (registration.active) {
+          serviceWorker = registration.active;
+          printState('active');
         }
-        printState(currentStatus);
+
+        if (serviceWorker) {
+          printState(serviceWorker.state);
+
+          serviceWorker.addEventListener('statechange', function(e) {
+            printState(e.target.state);
+          });
+        }
 
       }).catch(error=>document.querySelector("#status").textContent=error)
     } else {
