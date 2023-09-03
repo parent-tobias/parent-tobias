@@ -14,7 +14,7 @@
 
     const printState = (state) =>{
       const stateEl = document.createElement('li');
-      stateEl.classList.add(`currentStatus ${state}`);
+      stateEl.classList.add('currentStatus', state);
       document.querySelector('#state').append(stateEl)
     }
 
